@@ -11,12 +11,10 @@
     --primary-color: #0F172A;
     /* Off-White */
     --text-color: #E2E8F0;
-    /* Electric Blue */
-    --accent-color: #00A3FF;
     /* Neon Pink */
     --highlight-color: #FF0080;
     /* Lime Green */
-    --secondary-accent-color: #39FF14;
+    --accent-color: #5eead4;
 }
 
 /* General Styles */
@@ -24,24 +22,43 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     font-family: var(--font-inter);
+    font-size: 16px;
+    overflow-x: hidden;
 }
 
-h1,
-h2,
-h3 {
+h1 {
     font-family: var(--font-inter);
     color: var(--text-color);
-
 }
 
-nav a {
-    font-family: var(--font-inter);
-    color: var(--text-color);
-    font-weight: 700;
-    text-decoration: none;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
+
+/*Cursor*/
+
+/* Custom Cursor with Radial Gradient */
+
+.cursor {
+    position: fixed;
+    width: 600px;
+    /* The size of the gradient */
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29, 78, 216, 0.15), transparent 80%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    /* Optional, for visual effect on dark backgrounds */
+    z-index: 1000;
+    transition: transform 0.1s ease-in-out;
+    /* Smooth movement */
 }
 
+
+
+
+header {
+    position: fixed;
+    width: 100vw;
+}
 
 /* Navbar Styles */
 nav {
@@ -60,6 +77,19 @@ nav {
     justify-content: space-between;
 }
 
+nav a {
+    font-family: var(--font-inter);
+    color: var(--text-color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+
+}
+
 .nav-links {
     display: flex;
     flex-direction: row;
@@ -73,49 +103,61 @@ ul {
     list-style: none;
 }
 
-/* Neon Container */
-.container {
-    text-align: center;
-    position: relative;
+
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 60%;
 }
 
-.neon-text {
+/* Neon Container */
+#intro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Glow Effect Background */
+.glow-effect {
+    position: relative;
+    padding: 20px;
+}
+
+.glow-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 1200px;
+    width: 70vw;
+    height: 1000px;
+    background: radial-gradient(circle, rgb(195, 112, 206), transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+/*Inside Glow*/
+
+.glow-effect h1 {
     font-size: 3rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color), 0 0 30px var(--accent-color), 0 0 40px var(--accent-color);
 }
 
 .neon-subtext {
     font-size: 1.5rem;
-    color: var(--highlight-color);
-    text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color), 0 0 40px var(--highlight-color);
 }
 
 .animation {
-    position: absolute;
-    top: 50%;
-    right: -150px;
-    transform: translateY(-50%);
-    width: 150px;
-    height: 150px;
+    width: 300px;
 }
 
 
 
 /* Neon Effect on Mouse Hover */
-a:hover {
-    color: var(--secondary-accent-color);
-}
-
-/* Neon Cursor Effect */
-body {
-    cursor: url('path/to/your/cursor-image.png'), auto;
-}
-
-
-
-
 
 /* Page Entry Animation */
 @keyframes pageLoad {
