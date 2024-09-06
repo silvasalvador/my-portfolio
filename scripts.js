@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Move the cursor element with the mouse
     document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
+        cursor.style.left = `${e.clientX}px`;  // Use clientX for viewport-relative position
+        cursor.style.top = `${e.clientY}px`;   // Use clientY for viewport-relative position
     });
-
 });

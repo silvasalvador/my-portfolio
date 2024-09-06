@@ -10,10 +10,12 @@
     /* Dark Navy Blue */
     --primary-color: #0F172A;
     /* Off-White */
-    --text-color: #E2E8F0;
+    --heading-color: #E2E8F0;
+    /*text color*/
+    --text-color: #94A3B8;
     /* Neon Pink */
     --highlight-color: #FF0080;
-    /* Lime Green */
+    /* Blue */
     --accent-color: #5eead4;
 }
 
@@ -26,9 +28,19 @@ body {
     overflow-x: hidden;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-family: var(--font-inter);
-    color: var(--text-color);
+    color: var(--heading-color);
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -56,7 +68,6 @@ h1 {
 
 
 header {
-    position: fixed;
     width: 100vw;
 }
 
@@ -77,14 +88,6 @@ nav {
     justify-content: space-between;
 }
 
-nav a {
-    font-family: var(--font-inter);
-    color: var(--text-color);
-    font-weight: 700;
-    text-decoration: none;
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-}
-
 a:hover {
     color: var(--accent-color);
 
@@ -96,7 +99,15 @@ a:hover {
 }
 
 .nav-item {
+    display: inline-block;
+    color: var(--heading-color);
+    font-weight: 700;
     padding: 10px;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: translateY(-3px);
 }
 
 ul {
@@ -106,7 +117,7 @@ ul {
 
 main {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1000px;
     width: 60%;
 }
 
@@ -174,4 +185,48 @@ main {
 
 body {
     animation: pageLoad 1s ease-in-out;
+}
+
+/*About*/
+.about-main {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#about-text {
+    font-size: 1.2rem;
+    max-width: 650px;
+}
+
+#about-text a {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+#about-text a:hover {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+#about-text p {
+    text-align: justify;
+    margin-top: 15px;
+}
+
+.about-main img {
+    height: auto;
+    width: 330px;
+    margin-left: 60px;
+    border-radius: 30px;
+
+}
+
+
+
+/*just space*/
+
+.space {
+    height: 400px;
 }
