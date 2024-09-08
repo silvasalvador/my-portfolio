@@ -145,7 +145,7 @@ main {
     max-width: 1200px;
     width: 70vw;
     height: 1000px;
-    background: radial-gradient(circle, rgb(195, 112, 206), transparent 70%);
+    background: radial-gradient(circle, rgb(82, 190, 181), transparent 70%);
     transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 50%;
@@ -223,10 +223,4 @@ body {
 
 }
 
-
-
-/*just space*/
-
-.space {
-    height: 400px;
-}
+/*timeline*/

@@ -34,3 +34,44 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor.style.top = `${e.clientY}px`;   // Use clientY for viewport-relative position
     });
 });
+
+
+/*Experience tab*/
+window.addEventListener('scroll', function () {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const experienceText = document.getElementById('experience-text');
+    const educationText = document.getElementById('education-text');
+
+    timelineItems.forEach(item => {
+        const itemTop = item.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        if (itemTop < triggerBottom) {
+            item.classList.add('active');
+            const year = item.querySelector('.year').textContent;
+            if (year.includes('2016')) {
+                educationText.classList.add('active');
+                experienceText.classList.remove('active');
+            } else {
+                experienceText.classList.add('active');
+                educationText.classList.remove('active');
+            }
+        } else {
+            item.classList.remove('active');
+        }
+    });
+});
+
+// Add hover events to switch Professional Experience and Education
+const experienceText = document.getElementById('experience-text');
+const educationText = document.getElementById('education-text');
+
+experienceText.addEventListener('mouseenter', () => {
+    educationText.classList.remove('active');
+    experienceText.classList.add('active');
+});
+
+educationText.addEventListener('mouseenter', () => {
+    experienceText.classList.remove('active');
+    educationText.classList.add('active');
+});
