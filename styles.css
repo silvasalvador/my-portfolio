@@ -16,7 +16,10 @@
     /* Neon Pink */
     --highlight-color: #FF0080;
     /* Blue */
-    --accent-color: #5eead4;
+    --accent-color: #64ffda;
+    ;
+    /*lighter blue*/
+    --light-accent: #5eead4;
 }
 
 /* General Styles */
@@ -119,6 +122,20 @@ main {
     margin: 0 auto;
     max-width: 1000px;
     width: 60%;
+
+}
+
+#personal-name {
+    font-size: 5rem;
+}
+
+.neon-subtext {
+    color: var(--strong-accent);
+}
+
+#stack-icons {
+    display: flex;
+    margin-top: 20px;
 }
 
 /* Neon Container */
@@ -133,8 +150,12 @@ main {
 
 /* Glow Effect Background */
 .glow-effect {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     padding: 20px;
+    width: 100%;
 }
 
 .glow-effect::before {
@@ -145,7 +166,7 @@ main {
     max-width: 1200px;
     width: 70vw;
     height: 1000px;
-    background: radial-gradient(circle, rgb(82, 190, 181), transparent 70%);
+    /* background: radial-gradient(circle, rgb(82, 190, 181), transparent 70%); */
     transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 50%;
