@@ -113,10 +113,6 @@ a:hover {
     transform: translateY(-3px);
 }
 
-ul {
-    list-style: none;
-}
-
 
 main {
     margin: 0 auto;
@@ -245,3 +241,27 @@ body {
 }
 
 /*timeline*/
+ul,
+ol {
+    list-style: none;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   padding: 20px;
+}
+
+.timeline-item .year{
+    width: 200px;
+}
+
+.tech-list{
+    margin-top: 10px;
+    display: flex;
+}
+
+.tech-list .tech-item{
+ padding: 10px;
+}
