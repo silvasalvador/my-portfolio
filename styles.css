@@ -317,7 +317,6 @@ ol {
     transition: transform 0.3s ease-in-out;
 }
 
-
 .company-link::after {
     content: "";
     position: absolute;

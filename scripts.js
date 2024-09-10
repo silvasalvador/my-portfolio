@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // On hover, reduce opacity of all other items
                 timelineItems.forEach((otherItem) => {
                     if (otherItem !== item) {
-                        otherItem.style.opacity = '0.2';  // Lower opacity for non-hovered items
+                        otherItem.style.opacity = '0.3';  // Lower opacity for non-hovered items
                     }
                 });
                 // Increase opacity for the hovered item
