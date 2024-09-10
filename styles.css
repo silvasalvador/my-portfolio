@@ -20,6 +20,10 @@
     ;
     /*lighter blue*/
     --light-accent: #5eead4;
+    /*Even lighter accent*/
+    --try-accent: rgb(0, 255, 217);
+    --background-hover: rgba(255, 255, 255, 0.1);
+    --inactive-text-color: rgba(148, 163, 184, 0.7);
 }
 
 /* General Styles */
@@ -250,18 +254,101 @@ ol {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   padding: 20px;
+    padding: 20px;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+    margin: 15px 0;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    opacity: 0.8;
 }
 
-.timeline-item .year{
-    width: 200px;
+
+
+.timeline-item:hover {
+    background-color: rgba(148, 163, 184, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.tech-list{
-    margin-top: 10px;
+.year-div {
+    align-items: start;
     display: flex;
 }
 
-.tech-list .tech-item{
- padding: 10px;
+.timeline-item .year {
+    width: 10vw;
+    color: var(--inactive-text-color);
+    font-size: 14px;
+    font-weight: 400;
+
+}
+
+
+.job-description .title {
+    font-weight: 500;
+    margin-bottom: .8rem;
+    color: #ffffff;
+}
+
+/* Companny link animation */
+
+/* trying hover */
+/* Company link styles */
+.company-link {
+    position: relative;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Underline effect */
+.company-link:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.company-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.job-description .description {
+    margin-bottom: .3rem;
+}
+
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tech-list .tech-item {
+    padding: .25rem .9rem;
+    margin-top: .5rem;
+    margin-right: .4rem;
+    border-radius: 30px;
+    background-color: rgb(45, 212, 191, .1);
+    color: var(--try-accent);
+    width: auto;
 }

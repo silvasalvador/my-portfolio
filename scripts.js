@@ -36,42 +36,36 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/*Experience tab*/
-window.addEventListener('scroll', function () {
+
+// timeline hover
+document.addEventListener('DOMContentLoaded', () => {
     const timelineItems = document.querySelectorAll('.timeline-item');
-    const experienceText = document.getElementById('experience-text');
-    const educationText = document.getElementById('education-text');
 
-    timelineItems.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        const triggerBottom = window.innerHeight / 5 * 4;
+    if (timelineItems.length > 0) {
+        timelineItems.forEach((item) => {
+            item.addEventListener('mouseenter', () => {
+                console.log('Hovering over:', item); // Debugging to ensure the event fires
+                // On hover, reduce opacity of all other items
+                timelineItems.forEach((otherItem) => {
+                    if (otherItem !== item) {
+                        otherItem.style.opacity = '0.2';  // Lower opacity for non-hovered items
+                    }
+                });
+                // Increase opacity for the hovered item
+                item.style.opacity = '1';
+            });
 
-        if (itemTop < triggerBottom) {
-            item.classList.add('active');
-            const year = item.querySelector('.year').textContent;
-            if (year.includes('2016')) {
-                educationText.classList.add('active');
-                experienceText.classList.remove('active');
-            } else {
-                experienceText.classList.add('active');
-                educationText.classList.remove('active');
-            }
-        } else {
-            item.classList.remove('active');
-        }
-    });
+            item.addEventListener('mouseleave', () => {
+                console.log('Stopped hovering:', item); // Debugging to ensure the event stops
+                // Reset opacity of all items when no item is hovered
+                timelineItems.forEach((otherItem) => {
+                    otherItem.style.opacity = '0.8'; // Reset to default opacity
+                });
+            });
+        });
+    }
 });
 
-// Add hover events to switch Professional Experience and Education
-const experienceText = document.getElementById('experience-text');
-const educationText = document.getElementById('education-text');
 
-experienceText.addEventListener('mouseenter', () => {
-    educationText.classList.remove('active');
-    experienceText.classList.add('active');
-});
 
-educationText.addEventListener('mouseenter', () => {
-    experienceText.classList.remove('active');
-    educationText.classList.add('active');
-});
+
