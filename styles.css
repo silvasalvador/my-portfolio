@@ -125,18 +125,69 @@ main {
 
 }
 
+/* Intro */
+.welcome-text {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+
+
 #personal-name {
     font-size: 5rem;
 }
+
+#stack-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stack-icon {
+    width: 48px;
+    height: 48px;
+    /* Adjust size as necessary */
+    animation: floatUpDown 3s ease-in-out infinite;
+    /* Different animation delays for each icon */
+}
+
+.stack-icon:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.stack-icon:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Floating effect */
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+        /* Adjust the bounce height */
+    }
+}
+
+
+
+/* Optional styles for icons/stack area */
+#stack-icons img {
+    filter: drop-shadow(0px 0px 10px rgb(16, 173, 165));
+}
+
 
 .neon-subtext {
     color: var(--strong-accent);
 }
 
-#stack-icons {
-    display: flex;
-    margin-top: 20px;
-}
 
 /* Neon Container */
 #intro {
@@ -166,7 +217,7 @@ main {
     max-width: 1200px;
     width: 70vw;
     height: 1000px;
-    /* background: radial-gradient(circle, rgb(82, 190, 181), transparent 70%); */
+    background: radial-gradient(circle, rgba(189, 197, 199, 0), transparent 90%);
     transform: translate(-50%, -50%);
     z-index: -1;
     border-radius: 50%;
