@@ -107,14 +107,7 @@ a {
 }
 
 
-/* Navbar Styles */
 
-header {
-    width: 100vw;
-    position: relative;
-    z-index: 1000;
-
-}
 
 
 nav {
@@ -387,7 +380,8 @@ main {
 
 /*About*/
 #about h2,
-#timeline h2 {
+#timeline h2,
+#projects h2 {
     position: relative;
     padding-left: 15px;
     /* Adjusts the padding to make room for the left bar */
@@ -398,7 +392,8 @@ main {
 }
 
 #about h2::before,
-#timeline h2::before {
+#timeline h2::before,
+#projects h2::before {
     content: '';
     position: absolute;
     left: 0;
@@ -417,6 +412,7 @@ main {
 
 .about-main {
     margin-top: 40px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -510,7 +506,7 @@ main {
 
 /*timeline*/
 #timeline {
-    margin-top: 300px;
+    margin-top: 250px;
 }
 
 ul,
@@ -518,10 +514,14 @@ ol {
     list-style: none;
 }
 
+#timeline-list {
+    margin: 50px auto;
+    width: 920px;
+}
+
 .timeline-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 20px;
     transition: opacity 0.3s ease, background-color 0.3s ease;
     border-radius: 8px;
@@ -530,8 +530,8 @@ ol {
     position: relative;
     z-index: 1;
     opacity: 0.8;
+    align-items: flex-start;
 }
-
 
 
 .timeline-item:hover {
@@ -541,17 +541,36 @@ ol {
 
 .year-div {
     align-items: start;
+    justify-content: center;
     display: flex;
+    min-width: 120px;
+    flex-direction: column;
 }
 
+
 .timeline-item .year {
-    width: 10vw;
     color: var(--inactive-text-color);
     font-size: 14px;
     font-weight: 400;
-
+    text-align: right;
 }
 
+
+
+.timeline-animation {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    margin: 50px auto;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.timeline-item:hover .timeline-animation {
+    opacity: 1;
+    transform: scale(1);
+}
 
 .job-description .title {
     font-weight: 500;
@@ -559,19 +578,16 @@ ol {
     color: #ffffff;
 }
 
-/* Companny link animation */
-
-/* trying hover */
-/* Company link styles */
+/* Company link styles with hover effect */
 .company-link {
     position: relative;
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+
 }
 
-/* Underline effect */
 .company-link:hover::after {
     content: "";
     position: absolute;
@@ -583,6 +599,7 @@ ol {
     transform: scaleX(1);
     transform-origin: bottom left;
     transition: transform 0.3s ease-in-out;
+
 }
 
 .company-link::after {
@@ -598,24 +615,153 @@ ol {
     transition: transform 0.3s ease-in-out;
 }
 
-
-.job-description .description {
-    margin-bottom: .3rem;
+.job-description {
+    max-width: 600px;
+    margin: 10px auto;
+    flex: 1;
 }
 
+/* Job description with more spacing between sections */
+.job-description .description {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
 
+/* Responsabilities list styling */
+.responsibilities-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.responsibilities-list li {
+    font-size: .94rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-color);
+}
+
+/* Tech stack styles */
 .tech-list {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .tech-list .tech-item {
     padding: .25rem .9rem;
-    margin-top: .5rem;
+    margin-top: .8rem;
     margin-right: .4rem;
     border-radius: 30px;
     background-color: rgb(45, 212, 191, .1);
-    color: var(--try-accent);
+    color: var(--accent-color);
     width: auto;
+}
+
+
+
+.job-description .description strong {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+
+
+.responsibilities-list li::before {
+    content: ">";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 10px;
+}
+
+
+/* Project Section */
+#projects {
+    margin-top: 100px;
+}
+
+.projects-grid {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #0a1b38;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+    transition: border-color 0.3s ease;
+    border: 2px solid rgba(148, 163, 184, 0.1);
+}
+
+.project-image img:hover {
+    border-color: rgba(148, 163, 184, 0.8);
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.project-folder {
+    color: var(--accent-color);
+    width: 24px;
+    height: 24px;
+}
+
+.project-link {
+    color: var(--accent-color);
+    width: 24px;
+    height: 24px;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.project-stack-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-stack-list li {
+    background-color: #0c2c4a;
+    color: var(--accent-color);
+    font-size: 0.875rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
 }

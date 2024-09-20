@@ -9,16 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true,
     });
 });
-//animation
-document.addEventListener('DOMContentLoaded', function () {
-    var animationContainer = document.getElementById('lottie-animation');
+
+// Function to load Lottie animations
+function loadLottieAnimation(containerId, animationPath) {
+    var animationContainer = document.getElementById(containerId);
     var animation = lottie.loadAnimation({
         container: animationContainer,
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: 'Animations/Animation - 1725382294510.json'
+        path: animationPath
     });
+}
+
+// Load multiple animations by calling the function with different container IDs and file paths
+document.addEventListener('DOMContentLoaded', function () {
+    loadLottieAnimation('intro-animation', 'Animations/laptop-animation.json');
 });
 
 //glow effect
