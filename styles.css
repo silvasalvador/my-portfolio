@@ -153,9 +153,7 @@ a:hover {
 
 main {
     margin: 0 auto;
-    max-width: 1000px;
-    width: 60%;
-
+    width: 1000px;
 }
 
 /* Intro */
@@ -689,7 +687,7 @@ ol {
     display: grid;
     margin-top: 50px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 15px;
 }
 
 .project-item {
@@ -706,6 +704,11 @@ ol {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+.project-image{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
 
 .project-image img {
     width: 100%;
@@ -720,23 +723,13 @@ ol {
     border-color: rgba(148, 163, 184, 0.8);
 }
 
-.project-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.project-folder {
-    color: var(--accent-color);
-    width: 24px;
-    height: 24px;
-}
-
 .project-link {
-    color: var(--accent-color);
-    width: 24px;
-    height: 24px;
+    position: absolute; /* Position relative to .project-image */
+    top: 15px; /* Adjust vertical position */
+    right: 15px; /* Adjust horizontal position */
+    color: white; /* Default icon color */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Indicate the element is clickable */
 }
 
 .project-title {
