@@ -693,6 +693,7 @@ ol {
 .project-item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     background-color: #0a1b38;
     border-radius: 10px;
@@ -704,7 +705,8 @@ ol {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.project-image{
+
+.project-image {
     position: relative;
     display: flex;
     justify-content: center;
@@ -713,7 +715,7 @@ ol {
 .project-image img {
     width: 100%;
     border-radius: 8px;
-    height: auto;
+    height: 170px;
     object-fit: cover;
     transition: border-color 0.3s ease;
     border: 2px solid rgba(148, 163, 184, 0.1);
@@ -724,13 +726,14 @@ ol {
 }
 
 .project-link {
-    position: absolute; /* Position relative to .project-image */
-    top: 15px; /* Adjust vertical position */
-    right: 15px; /* Adjust horizontal position */
-    color: white; /* Default icon color */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Indicate the element is clickable */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
+
 
 .project-title {
     font-size: 1.25rem;
