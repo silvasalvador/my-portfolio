@@ -128,7 +128,7 @@ nav {
     justify-content: space-between;
 }
 
-a:hover {
+nav a:hover {
     color: var(--accent-color);
 
 }
@@ -698,7 +698,11 @@ ol {
     background-color: #0a1b38;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.project-item:hover .project-image img {
+    border-color: rgba(94, 234, 212, 0.5);
 }
 
 .project-item:hover {
@@ -706,39 +710,52 @@ ol {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+
 .project-image {
     position: relative;
     display: flex;
     justify-content: center;
+
 }
 
 .project-image img {
     width: 100%;
     border-radius: 8px;
-    height: 170px;
+    height: 160px;
     object-fit: cover;
     transition: border-color 0.3s ease;
     border: 2px solid rgba(148, 163, 184, 0.1);
 }
 
-.project-image img:hover {
-    border-color: rgba(148, 163, 184, 0.8);
+.project-header {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
-.project-link {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    color: white;
-    transition: transform 0.3s ease, color 0.3s ease;
-    cursor: pointer;
+.project-header svg {
+    margin-left: .4rem;
+    width: 18px;
+    height: 18px;
 }
 
+.project-item:hover svg {
+    transform: translateY(-2px);
+    color: var(--accent-color);
+}
+
+.project-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-item:hover .project-title {
+    color: var(--accent-color);
+}
 
 .project-title {
     font-size: 1.25rem;
     font-weight: bold;
-    margin: 10px 0;
 }
 
 .project-description {

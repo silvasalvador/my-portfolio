@@ -71,6 +71,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+//Projects hover
+document.addEventListener('DOMContentLoaded', () => {
+    const projectItems = document.querySelectorAll('.project-item');
+
+    if (projectItems.length > 0) {
+        projectItems.forEach((item) => {
+
+            item.addEventListener('mouseenter', () => {
+                projectItems.forEach((otherItem) => {
+                    if (otherItem !== item) {
+                        otherItem.style.opacity = '0.3';  // Lower opacity for non-hovered items
+                    }
+                });
+                item.style.opacity = '1';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                // Reset opacity of all items and GitHub link when no item is hovered
+                projectItems.forEach((otherItem) => {
+                    otherItem.style.opacity = '.8'; // Reset opacity
+                });
+
+            });
+        });
+    }
+});
+
 
 
 
