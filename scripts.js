@@ -98,6 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+let lastScrollTop = 0;
+const header = document.getElementById("main-header");
 
+window.addEventListener("scroll", function() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+  if (scrollTop > lastScrollTop && scrollTop > 100) {  // Hide header when scrolling down
+    header.style.top = "-100px";
+  } else {  // Show header when scrolling up
+    header.style.top = "0";
+  }
 
+  lastScrollTop = scrollTop;
+});
