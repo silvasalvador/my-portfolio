@@ -2,7 +2,8 @@
 //text typing animation
 document.addEventListener('DOMContentLoaded', () => {
     var typed = new Typed('#typed-text', {
-        strings: ['&lt; Backend Developer /&gt;', '&lt; Scala Enthusiast /&gt;'],
+        strings: ['&lt;Problem Solver/&gt;', '&lt;Continuous Learner/&gt;', '&lt;Team Player/&gt;', '&lt;API Designer/&gt;', '&lt;System Architect/&gt;'],
+          
         typeSpeed: 100,
         backSpeed: 60,
         backDelay: 1500,
