@@ -25,6 +25,20 @@
     --try-accent: rgb(0, 255, 217);
     --background-hover: rgba(255, 255, 255, 0.1);
     --inactive-text-color: rgba(148, 163, 184, 0.7);
+
+
+    /* Font Size Variables with clamp() */
+    --font-body: clamp(14px, 1vw + 1rem, 16px);
+    /* Scaling between 14px and 16px */
+    --font-h1: clamp(2.5rem, 5vw, 3rem);
+    /* Scaling between 2.5rem and 3rem */
+    --font-h2: clamp(2rem, 4vw, 2.2rem);
+    /* Scaling between 2rem and 2.2rem */
+    --font-h3: clamp(1.5rem, 3vw, 2rem);
+    /* Scaling between 1.5rem and 2rem */
+    --font-small: clamp(12px, 1vw, 14px);
+    /* For smaller text like years */
+
 }
 
 /* General Styles */
@@ -32,10 +46,25 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
     font-family: var(--font-inter);
-    font-size: 16px;
+    font-size: var(--font-body);
     overflow-x: hidden;
     margin-top: 0;
+    width: 100%;
 }
+
+h1 {
+    font-size: var(--font-h1);
+
+}
+
+h2 {
+    font-size: var(--font-h2);
+}
+
+h3 {
+    font-size: var(--font-h3);
+}
+
 
 h1,
 h2,
@@ -44,9 +73,6 @@ h3 {
     color: var(--heading-color);
 }
 
-h2 {
-    font-size: 2rem;
-}
 
 a {
     text-decoration: none;
@@ -70,7 +96,6 @@ a {
     /* Optional, for visual effect on dark backgrounds */
     z-index: 1000;
     transition: transform 0.1s ease-in-out;
-    /* Smooth movement */
 }
 
 /* fadeinOpacity  for nav */
@@ -84,7 +109,6 @@ a {
     }
 }
 
-/* fade-in animation */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -107,14 +131,37 @@ a {
     animation: fadeInUp 1s ease forwards;
 }
 
-#main-header{
+#main-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     width: 100%;
     background-color: var(--primary-color);
     z-index: 2;
     top: 0;
     transition: top 0.3s ease-in-out;
+    animation: fadeInOpacity 3s ease forwards;
 }
+
+#branding-link {
+    position: absolute;
+    left: 1rem;
+    top: 20px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--heading-color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#branding-link:hover {
+    color: #94e9d8;
+    /* Slight hover effect */
+    transform: scale(1.05);
+    /* Subtle hover scale effect */
+}
+
 
 
 nav {
@@ -126,13 +173,28 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
-    animation: fadeInOpacity 3s ease forwards;
 }
 
 .nav-right {
+    padding-top: 1.2px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.resume-button {
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 7px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px;
+}
+
+.resume-button:hover {
+    background-color: #00ffff;
+    color: #1b1b1b;
 }
 
 nav a:hover {
@@ -148,10 +210,13 @@ nav a:hover {
 .nav-item {
     display: inline-block;
     color: var(--heading-color);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
     font-weight: 700;
     padding: 10px;
     transition: text-shadow 0.3s ease, color 0.3s ease;
 }
+
+
 
 .nav-item:hover {
     transform: translateY(-3px);
@@ -164,18 +229,39 @@ main {
 }
 
 /* Intro */
-.welcome-text {
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    animation-delay: 0.6s;
+
+.animation-left-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px;
+    width: 100%;
 }
 
 
 
+.animation {
+    width: 300px;
+    animation-delay: 0.8s;
+}
+
+
+.welcome-text {
+    color: var(--accent-color);
+    font-size: var(--font-h2);
+    margin-bottom: 1rem;
+    text-align: center;
+    animation-delay: 0.6s;
+}
+
 #personal-name {
-    font-size: 5rem;
+    font-size: clamp(3rem, 8vw, 5rem);
     animation-delay: 0.9s;
 }
 
@@ -289,14 +375,13 @@ main {
     background-color: transparent;
     transform: rotateY(180deg);
     color: var(--accent-color);
-    /* Optional styling for text */
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .flip-box-back a {
     color: var(--accent-color);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 600;
 }
 
@@ -319,13 +404,13 @@ main {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Optional styles for icons/stack area */
 #stack-icons img {
     filter: drop-shadow(0px 0px 4px rgb(16, 173, 165));
 }
 
 
 .neon-subtext {
+    font-size: clamp(1rem, 3vw, 1.5rem);
     color: var(--strong-accent);
     animation-delay: 1.2s;
 }
@@ -341,50 +426,9 @@ main {
     text-align: center;
 }
 
-/* Glow Effect Background */
-.glow-effect {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 20px;
-    width: 100%;
-}
-
-.glow-effect::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    max-width: 1200px;
-    width: 70vw;
-    height: 1000px;
-    background: radial-gradient(circle, rgba(189, 197, 199, 0), transparent 90%);
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    border-radius: 50%;
-    filter: blur(50px);
-}
-
-/*Inside Glow*/
-
-.glow-effect h1 {
-    font-size: 3rem;
-}
-
-.neon-subtext {
-    font-size: 1.5rem;
-}
-
-.animation {
-    width: 300px;
-    animation-delay: 0.8s;
-}
-
-
 
 /*About*/
-#about{
+#about {
     scroll-margin-top: 100px;
 }
 
@@ -394,11 +438,8 @@ main {
 #projects h2 {
     position: relative;
     padding-left: 15px;
-    /* Adjusts the padding to make room for the left bar */
-    font-size: 2.2rem;
     font-weight: bold;
     color: var(--heading-color);
-    /* Main header color */
 }
 
 #about h2::before,
@@ -430,7 +471,7 @@ main {
 
 #about-text {
     font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
     font-weight: 400;
     color: #94A3B8;
     line-height: 1.6;
@@ -584,6 +625,7 @@ ol {
 }
 
 .job-description .title {
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 500;
     margin-bottom: .8rem;
     color: #ffffff;
@@ -632,15 +674,12 @@ ol {
     flex: 1;
 }
 
-/* Job description with more spacing between sections */
 .job-description .description {
     margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 17px;
     color: var(--text-color);
 }
 
-/* Responsabilities list styling */
 .responsibilities-list {
     list-style: none;
     padding-left: 0;
@@ -648,7 +687,7 @@ ol {
 }
 
 .responsibilities-list li {
-    font-size: .94rem;
+    font-size: 15px;
     margin-bottom: 15px;
     padding-left: 30px;
     position: relative;
@@ -705,15 +744,21 @@ ol {
 }
 
 .project-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     padding: 20px;
     background-color: #0a1b38;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease, background-color 0.3s ease;
 }
+
+.project-item a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
 
 .project-item:hover .project-image img {
     border-color: rgba(94, 234, 212, 0.5);
@@ -768,12 +813,12 @@ ol {
 }
 
 .project-title {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: bold;
 }
 
 .project-description {
-    font-size: 0.95rem;
+    font-size: 16px;
     color: var(--text-color);
     margin-bottom: 20px;
 }
@@ -787,13 +832,13 @@ ol {
 .project-stack-list li {
     background-color: #0c2c4a;
     color: var(--accent-color);
-    font-size: 0.875rem;
+    font-size: 14px;
     padding: 5px 10px;
     border-radius: 5px;
     display: inline-block;
 }
 
-.general-footer{
+.general-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -802,11 +847,59 @@ ol {
 }
 
 .general-footer p {
-    font-size: .8em;
+    font-size: clamp(0.6rem, 2vw, .8rem);
     font-style: italic;
 }
 
 .general-footer a {
     text-decoration: none;
     color: var(--heading-color);
+}
+
+/* responsive laptop */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    nav {
+        max-width: 100%;
+    }
+
+    .nav-right {
+        margin-left: 28vw;
+    }
+
+}
+
+/*responsive tablet/*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+
+    main {
+        width: 90%;
+    }
+
+    nav {
+        max-width: 100%;
+    }
+
+    .nav-left {
+        padding-left: 20px;
+    }
+
+    .nav-right {
+        margin-left: 22vw;
+    }
+
+
+
+    #branding-link {
+        margin-right: 20px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+        padding: 8px 5px;
+    }
+
+    .nav-item svg {
+        width: 16px;
+    }
 }

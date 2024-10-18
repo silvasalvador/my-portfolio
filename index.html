@@ -17,7 +17,10 @@
 
 <body>
 
-    <header id="main-header"> 
+    <header id="main-header">
+        <a href="" aria-label="home" id="branding-link">
+            Salvador Silva
+        </a>
         <nav>
             <div class="nav-left">
                 <ul class="nav-links">
@@ -48,16 +51,18 @@
                                 d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" />
                         </svg>
                     </a>
+                    <a class="resume-button" href="link-to-resume.pdf" target="_blank">Resume</a>
+
             </div>
         </nav>
     </header>
 
     <main>
         <section id="intro">
-            <div class="glow-effect">
+            <div class="intro-container">
                 <div class=animation-left-text>
                     <h2 class="welcome-text">Welcome to My Space</h2>
-                    <h1 id="personal-name">Salvador Silva.</h1>
+                    <h1 id="personal-name">Salvador Silva</h1>
                     <div class="neon-subtext"><span id="typed-text"></span></div>
                     <div id="stack-icons">
                         <div class="icon-card">
@@ -368,150 +373,160 @@
             <h2>Projects</h2>
             <ul class="projects-grid">
                 <li class="project-item">
-                    <a href="https://github.com/SilvaSalvador/FireFighter" class="project-link-wrapper" target="_blank"  rel="noreferrer noopener" aria-label="FireFight Project (opens in a new tab)">
+                    <a href="https://github.com/SilvaSalvador/FireFighter" class="project-link-wrapper" target="_blank"
+                        rel="noreferrer noopener" aria-label="FireFight Project (opens in a new tab)">
 
-                    <header>
-                        <div class="project-image">
-                            <img src="images/Projects/firefighter-preview.png" alt="Project Image of FireFight game" />
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">FireFight</h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-github ">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="project-description">A turn-based fire-fighting game, leveraging
-                            object-oriented programming principles.
-                        </p>
-                    </header>
-                    <footer>
-                        <ul class="project-stack-list">
-                            <li>Java</li>
-                            <li>Java FX</li>
-                        </ul>
-                    </footer>
-                </a>
-                </li>
-                <li class="project-item">
-                    <a href="https://github.com/SilvaSalvador/Octrees" class="project-link-wrapper" target="_blank"  rel="noreferrer noopener" aria-label="Octrees Project (opens in a new tab)">
-                    <header>
-                        <div class="project-image">
-                            <img src="images/Projects/Octree.webp" alt="Project Image of FireFight game" />
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">Octrees</h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-github ">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="project-description">A Scala application to load and visualize graphical
-                            models from a text file using View Frustum Culling with Octrees.
-                        </p>
-                    </header>
-                    <footer>
-                        <ul class="project-stack-list">
-                            <li>Scala</li>
-                            <li>Java FX</li>
-                        </ul>
-                    </footer>
-                </a>
-                </li>
-                <li class="project-item">
-                    <a href="https://github.com/SilvaSalvador/Agar.cdp" class="project-link-wrapper" target="_blank"  rel="noreferrer noopener" aria-label="Agar.cdp Project (opens in a new tab)">
-
-                    <header>
-                        <div class="project-image">
-                            <img src="images/Projects/agar.pcd.png" alt="Image of the agar.pcd project" />
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">Agar.cdp</h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-github ">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="project-description">A simplified version of the popular Agar.io game, implementing
-                            concurrent and distributed programming concepts.
-                        </p>
-                    </header>
-                    <footer>
-                        <ul class="project-stack-list">
-                            <li>Java</li>
-                            <li>Java FX</li>
-                        </ul>
-                    </footer>
+                        <header>
+                            <div class="project-image">
+                                <img src="images/Projects/firefighter-preview.png"
+                                    alt="Project Image of FireFight game" />
+                            </div>
+                            <div class="project-header">
+                                <h3 class="project-title">FireFight</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github ">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="project-description">A turn-based fire-fighting game, leveraging
+                                object-oriented programming principles.
+                            </p>
+                        </header>
+                        <footer>
+                            <ul class="project-stack-list">
+                                <li>Java</li>
+                                <li>Java FX</li>
+                            </ul>
+                        </footer>
                     </a>
                 </li>
                 <li class="project-item">
-                    <a href="https://github.com/SilvaSalvador/SneakerStore" class="project-link-wrapper"  target="_blank"  rel="noreferrer noopener" aria-label="Sneaker Store Project (opens in a new tab)">
-                    <header>
-                        <div class="project-image">
-                            <img src="images/Projects/sneaker-store.png" alt="Image of the Sneaker Store project" />
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">Sneaker Store</h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-github ">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="project-description">An online store for managing rare and exclusive sneakers.
-                        </p>
-                    </header>
-                    <footer>
-                        <ul class="project-stack-list">
-                            <li>Django</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Javascript</li>
-                        </ul>
-                    </footer>
-                </a>
-                </li>
-
-                <li class="project-item">
-                    <a href="https://github.com/SilvaSalvador/BubbleShellSort" class="project-link-wrapper" target="_blank"  rel="noreferrer noopener" aria-label="BubbleShellSort Project (opens in a new tab)">
-                    <header>
-                        <div class="project-image">
-                            <img src="images/Projects/bubblesort.webp" alt="Image of the agar.pcd project" />
-                        </div>
-                        <div class="project-header">
-                            <h3 class="project-title">BubbleShellSort</h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-github ">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="project-description">A linear-time sorting algorithm implemented using
-                            Shellsort on a linked list, based on a variant of the Bubblesort algorithm.
-                        </p>
-                    </header>
-                    <footer>
-                        <ul class="project-stack-list">
-                            <li>Java</li>
-                        </ul>
-                    </footer>
+                    <a href="https://github.com/SilvaSalvador/Octrees" class="project-link-wrapper" target="_blank"
+                        rel="noreferrer noopener" aria-label="Octrees Project (opens in a new tab)">
+                        <header>
+                            <div class="project-image">
+                                <img src="images/Projects/Octree.webp" alt="Project Image of FireFight game" />
+                            </div>
+                            <div class="project-header">
+                                <h3 class="project-title">Octrees</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github ">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="project-description">A Scala application to load and visualize graphical
+                                models from a text file using View Frustum Culling with Octrees.
+                            </p>
+                        </header>
+                        <footer>
+                            <ul class="project-stack-list">
+                                <li>Scala</li>
+                                <li>Java FX</li>
+                            </ul>
+                        </footer>
                     </a>
                 </li>
                 <li class="project-item">
-                    <a href="https://github.com/SilvaSalvador/ISCTE-ScheduleManager" class="project-link-wrapper" target="_blank"  rel="noreferrer noopener" aria-label="ScheduleManager Project (opens in a new tab)">
+                    <a href="https://github.com/SilvaSalvador/Agar.cdp" class="project-link-wrapper" target="_blank"
+                        rel="noreferrer noopener" aria-label="Agar.cdp Project (opens in a new tab)">
+
+                        <header>
+                            <div class="project-image">
+                                <img src="images/Projects/agar.pcd.png" alt="Image of the agar.pcd project" />
+                            </div>
+                            <div class="project-header">
+                                <h3 class="project-title">Agar.cdp</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github ">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="project-description">A simplified version of the popular Agar.io game,
+                                implementing
+                                concurrent and distributed programming concepts.
+                            </p>
+                        </header>
+                        <footer>
+                            <ul class="project-stack-list">
+                                <li>Java</li>
+                                <li>Java FX</li>
+                            </ul>
+                        </footer>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="https://github.com/SilvaSalvador/SneakerStore" class="project-link-wrapper" target="_blank"
+                        rel="noreferrer noopener" aria-label="Sneaker Store Project (opens in a new tab)">
+                        <header>
+                            <div class="project-image">
+                                <img src="images/Projects/sneaker-store.png" alt="Image of the Sneaker Store project" />
+                            </div>
+                            <div class="project-header">
+                                <h3 class="project-title">Sneaker Store</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github ">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="project-description">An online store for managing rare and exclusive sneakers.
+                            </p>
+                        </header>
+                        <footer>
+                            <ul class="project-stack-list">
+                                <li>Django</li>
+                                <li>Javascript</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </footer>
+                    </a>
+                </li>
+
+                <li class="project-item">
+                    <a href="https://github.com/SilvaSalvador/BubbleShellSort" class="project-link-wrapper"
+                        target="_blank" rel="noreferrer noopener"
+                        aria-label="BubbleShellSort Project (opens in a new tab)">
+                        <header>
+                            <div class="project-image">
+                                <img src="images/Projects/bubblesort.webp" alt="Image of the agar.pcd project" />
+                            </div>
+                            <div class="project-header">
+                                <h3 class="project-title">BubbleShellSort</h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github ">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p class="project-description">A linear-time sorting algorithm implemented using
+                                Shellsort on a linked list, based on a variant of the Bubblesort algorithm.
+                            </p>
+                        </header>
+                        <footer>
+                            <ul class="project-stack-list">
+                                <li>Java</li>
+                            </ul>
+                        </footer>
+                    </a>
+                </li>
+                <li class="project-item">
+                    <a href="https://github.com/SilvaSalvador/ISCTE-ScheduleManager" class="project-link-wrapper"
+                        target="_blank" rel="noreferrer noopener"
+                        aria-label="ScheduleManager Project (opens in a new tab)">
                         <header>
                             <div class="project-image">
                                 <img src="images/Projects/calendar.webp"
@@ -545,14 +560,13 @@
                             </ul>
                         </footer>
                     </a>
-              
+
             </ul>
         </section>
     </main>
     <footer class="general-footer">
         <p>© 2024 Built and Designed by <b>Salvador Silva </b>. All rights reserved.</p>
-        <p>Illustrations by <a href="https://storyset.com" target="_blank">Storyset</a></p
-      </footer>
+        <p>Illustrations by <a href="https://storyset.com" target="_blank">Storyset</a></p </footer>
 </body>
 
 </html>
