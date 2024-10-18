@@ -147,7 +147,7 @@ a {
 #branding-link {
     position: absolute;
     left: 1rem;
-    top: 20px;
+    top: 22px;
     font-size: clamp(1rem, 2vw, 1.2rem);
     color: var(--heading-color);
     font-weight: 700;
@@ -173,6 +173,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 7px;
 }
 
 .nav-right {
@@ -190,6 +191,7 @@ nav {
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     margin-left: 10px;
+    margin-top: -5px;
 }
 
 .resume-button:hover {
@@ -860,11 +862,14 @@ ol {
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
     nav {
         max-width: 100%;
+        padding-bottom: 5px;
     }
 
     .nav-right {
         margin-left: 28vw;
     }
+
+
 
 }
 
@@ -872,34 +877,71 @@ ol {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
 
 
+
+
     main {
         width: 90%;
     }
 
     nav {
+        width: 76%;
         max-width: 100%;
+        margin: 0 0 0 15vw;
+        padding-bottom: 5px;
     }
 
-    .nav-left {
-        padding-left: 20px;
-    }
-
-    .nav-right {
-        margin-left: 22vw;
-    }
 
 
 
     #branding-link {
-        margin-right: 20px;
+        top: 21px;
+        left: 15px;
+        font-size: 18px;
     }
 
     .nav-item {
-        font-size: 14px;
-        padding: 8px 5px;
+        font-size: 16px;
+        padding: 10px 5px;
     }
 
     .nav-item svg {
-        width: 16px;
+        margin-bottom: -3px;
+        width: 22px;
+        height: auto;
     }
+
+    .resume-button {
+        padding: 3px 4px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-left: 10px;
+        margin-top: -1px;
+    }
+
+
+    #personal-name {
+        font-size: 3.8rem;
+    }
+
+    .welcome-text {
+        font-size: 1.8rem;
+    }
+
+    #typed-text {
+        font-size: 20px;
+    }
+
+    #stack-icons {
+        gap: 1.2vw;
+        margin-top: 30px;
+    }
+
+    .stack-icon {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
 }
