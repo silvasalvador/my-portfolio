@@ -113,3 +113,18 @@ window.addEventListener("scroll", function() {
 
   lastScrollTop = scrollTop;
 });
+
+// mobile nav
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const mobileNav = document.querySelector('.mobile-nav');
+const closeButton = document.querySelector('.close-button');
+
+// Open mobile menu
+hamburgerIcon.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+});
+
+// Close mobile menu
+closeButton.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+});

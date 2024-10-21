@@ -162,7 +162,63 @@ a {
     /* Subtle hover scale effect */
 }
 
+/* Hide mobile nav initially */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0a192f;
+    z-index: 100;
+    text-align: center;
+}
 
+/* Show mobile nav when it's toggled on */
+.mobile-nav.active {
+    display: flex;
+}
+
+.hamburger-icon {
+    margin: 10px;
+    display: none; 
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+/* Close button */
+.close-button {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Styling for mobile navigation links */
+.menu-list li {
+    list-style: none;
+    padding: 15px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-item {
+    display: block;
+    margin-bottom: 15px;
+    color: #0af;
+    text-decoration: none;
+}
+
+.social-item:hover {
+    text-decoration: underline;
+}
+
+/* end of mobile nav */
 
 nav {
     position: relative;
@@ -537,8 +593,8 @@ main {
 
 .about-main img {
     align-self: flex-start;
-    height: auto;
     width: 330px;
+    height: auto;
     margin-left: 60px;
     border-radius: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -570,7 +626,7 @@ ol {
 
 #timeline-list {
     margin: 50px auto;
-    width: 920px;
+    width: 92%;
 }
 
 .timeline-item {
@@ -606,6 +662,7 @@ ol {
     color: var(--inactive-text-color);
     font-size: 14px;
     font-weight: 400;
+    padding-top: 4px;
     text-align: right;
 }
 
@@ -672,7 +729,8 @@ ol {
 
 .job-description {
     max-width: 600px;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
     flex: 1;
 }
 
@@ -845,7 +903,8 @@ ol {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 30px 0;
+    margin-top: 100px;
+    margin-bottom: 15px;
 }
 
 .general-footer p {
@@ -943,5 +1002,68 @@ ol {
         height: 36px;
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
+
+    .about-main img {
+        width: 30vw;   
+        height: auto;
+        margin-left: 50px;
+    }    
+
+    #timeline-list {
+        margin: 30px auto;
+        width: 100%;
+    }
+
+
+    .year-div{
+    min-width: 180px;
+    }
+    .timeline-item .year{
+        font-size: 12px;
+    }
+    #timeline-list li:first-child .timeline-animation{
+        margin: 80px auto;
+    }
+
+    .timeline-animation{
+        width: 150px;
+        
+    }
+    .job-description .title {
+        font-size:18px;
+    }
+
+    .job-description .description{
+        font-size: 16px;
+    }
+    .responsibilities-list li{
+        font-size: 14px;
+    }
+
+    .tech-list .tech-item{
+        margin-top: 0.6rem;
+    }
+    .tech-item-text{
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 94%;
+    }
+
+
+    .nav-left, .nav-right {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: block; 
+    }
+
+
+
 
 }
