@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     var typed = new Typed('#typed-text', {
         strings: ['&lt;Problem Solver/&gt;', '&lt;Continuous Learner/&gt;', '&lt;Team Player/&gt;', '&lt;API Designer/&gt;', '&lt;System Architect/&gt;'],
-          
+
         typeSpeed: 100,
         backSpeed: 60,
         backDelay: 1500,
@@ -102,29 +102,73 @@ document.addEventListener('DOMContentLoaded', () => {
 let lastScrollTop = 0;
 const header = document.getElementById("main-header");
 
-window.addEventListener("scroll", function() {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (scrollTop > lastScrollTop && scrollTop > 100) {  // Hide header when scrolling down
-    header.style.top = "-100px";
-  } else {  // Show header when scrolling up
-    header.style.top = "0";
-  }
+    if (scrollTop > lastScrollTop && scrollTop > 100) {  // Hide header when scrolling down
+        header.style.top = "-100px";
+    } else {  // Show header when scrolling up
+        header.style.top = "0";
+    }
 
-  lastScrollTop = scrollTop;
+    lastScrollTop = scrollTop;
 });
 
-// mobile nav
+// Elements selection
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const mobileNav = document.querySelector('.mobile-nav');
 const closeButton = document.querySelector('.close-button');
+const overlay = document.querySelector('.overlay');
+const menuLinks = document.querySelectorAll('.menu-list li a');
 
-// Open mobile menu
+// Function to open the menu
 hamburgerIcon.addEventListener('click', () => {
-    mobileNav.classList.add('active');
+    mobileNav.classList.add('active'); // Slide in the menu
+    overlay.classList.add('active');   // Show overlay
+    document.body.classList.add('nav-open'); // Prevent background scroll
 });
 
-// Close mobile menu
-closeButton.addEventListener('click', () => {
-    mobileNav.classList.remove('active');
+// Function to close the menu
+function closeMenu() {
+    mobileNav.classList.add('closing'); // Add the closing class for slide-out animation
+    overlay.classList.remove('active'); // Hide overlay
+    document.body.classList.remove('nav-open'); // Re-enable background scroll
+
+    // Listen for the end of the transition to remove the active class
+    mobileNav.addEventListener('transitionend', function () {
+        mobileNav.classList.remove('active');
+        mobileNav.classList.remove('closing'); // Clean up the closing class after animation
+    }, { once: true }); // Ensure this only triggers once
+}
+
+// Close menu when clicking the close button
+closeButton.addEventListener('click', closeMenu);
+
+// Close menu when clicking the overlay (outside the menu)
+overlay.addEventListener('click', closeMenu);
+
+// Close the menu when a navigation link is clicked
+menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+
+// Animation for fade in 
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
