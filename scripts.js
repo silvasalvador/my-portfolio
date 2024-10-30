@@ -153,23 +153,36 @@ menuLinks.forEach(link => {
 });
 
 
-// Animation for fade in 
+// Function to detect Safari browser
+function isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('.fade-in-section');
+    // If not Safari, proceed with fade-in animations
+    if (!isSafari()) {
+        const sections = document.querySelectorAll('.fade-in-section');
 
-    const thresholdValue = window.innerWidth < 768 ? 0.01 : 0.2;
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
+        const thresholdValue = window.innerWidth < 768 ? 0.01 : 0.2;
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: thresholdValue
         });
-    }, {
-        threshold: thresholdValue
-    });
 
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    } else {
+        // For Safari, make sections visible immediately without animation
+        const sections = document.querySelectorAll('.fade-in-section');
+        sections.forEach(section => {
+            section.classList.add('visible');
+        });
+    }
 });

@@ -1212,14 +1212,3 @@ ol {
         font-size: 20px;
     }
 }
-
-@media not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance: none) {
-
-        .fade-in-section {
-            opacity: 1;
-            transform: none;
-            transition: none;
-        }
-    }
-}
