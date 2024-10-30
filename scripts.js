@@ -157,8 +157,7 @@ menuLinks.forEach(link => {
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll('.fade-in-section');
 
-    const thresholdValue = window.innerWidth < 768 ? 0.05 : 0.2; // Set to 0.1 for mobile
-
+    const thresholdValue = window.innerWidth < 768 ? 0.01 : 0.2;
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
