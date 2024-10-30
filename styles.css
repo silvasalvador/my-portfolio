@@ -10,6 +10,17 @@
     width: 3px;
 }
 
+@media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+
+        .fade-in-section {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+}
+
 ::-webkit-scrollbar-thumb {
     background: var(--accent-color);
     border-radius: 10px;
